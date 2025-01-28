@@ -169,3 +169,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# Deno stuff
+deno.lock
+node_modules/

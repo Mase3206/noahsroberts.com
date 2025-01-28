@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "scrssg"
+version = "0.1.0"
+description = ""
+authors = ["Noah Roberts <noah@noahsroberts.com>"]
+license = "GPLv3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.scripts]
+# build
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
