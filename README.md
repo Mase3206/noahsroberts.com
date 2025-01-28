@@ -1,4 +1,4 @@
-**ssrssg** (pronounced /ˈsɚsɪg/ <sup>[?](https://en.wikipedia.org/wiki/Help:IPA/English)</sup>) is a **s**uper **s**imple, **r**eactive **s**tatic **s**ite **g**enerator. Pages and posts are written in Markdown with Jekyll-style frontmatter for metadata. Site structure is laid out in a single YAML file that automatically updates navigation. 
+**scrssg** (pronounced /ˈskɚsɪg/ <sup>[?](https://en.wikipedia.org/wiki/Help:IPA/English)</sup>) is a **s**uper **c**ustomizable, **r**eactive **s**tatic **s**ite **g**enerator. Pages and posts are written in Markdown with Jekyll-style frontmatter for metadata. Site structure is laid out in a single YAML file that automatically updates navigation. 
 
 ## Features
 
@@ -8,7 +8,7 @@
 - Minimal yet reactive front-end components using Preact
 - Global and/or per-page, category, or topic posts
 
-## Why ssrssg?
+## Why scrssg?
 
 - Easy install! (unlike Jekyll)
 - No Node.js! Pre-processing uses Python, Preact uses ES with Deno.
