@@ -1,9 +1,11 @@
+import subprocess
+
 def build():
 	"""
-	Run a full build of the entire site.
+	Build the site.
 
-	Steps
-	-----
+	Full build steps
+	----------------
 	1. Compile HTML from templates
 		1. Convert Markdown to HTML
 		2. Insert converted Markdown into templates
