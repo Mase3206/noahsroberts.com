@@ -83,7 +83,7 @@ class NavLinks(SerializedList):
 
 
 def _tc():
-	obj = NavLinks.serialize('tests/sample.yml')
+	obj = NavLinks.serialize('config/nav.yml')
 	print(obj)
 
 
