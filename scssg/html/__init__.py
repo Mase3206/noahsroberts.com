@@ -1,6 +1,7 @@
-from jinja2 import Environment, PackageLoader, select_autoescape
+from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
 
 env = Environment(
-    loader=PackageLoader("yourapp"),
+    # loader=FileSystemLoader("templates"),
+	loader=PackageLoader('scssg', '../templates'),
     autoescape=select_autoescape()
 )

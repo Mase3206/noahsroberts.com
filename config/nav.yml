@@ -16,8 +16,9 @@
     slug: scouts
   - name: Theatre
     slug: theatre
-  - name: Homelab
-    slug: homelab
+    contains:
+    - name: Homelab
+      slug: homelab
 
 
 - name: Resume

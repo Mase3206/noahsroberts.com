@@ -6,6 +6,7 @@ from scssg.deserializers.base import DeserializedList, DeserializedObject
 
 
 class GlobalConfiguration(DeserializedObject):
+	title: str
 	_class_name = 'GlobalConfiguration'
 
 	@staticmethod

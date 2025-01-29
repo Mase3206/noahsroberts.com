@@ -1,9 +1,9 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
-		<a class="navbar-item" href="/">{{ global.title }}</a>
+		<a class="navbar-item" href="/">{{ global_conf.title }}</a>
 
 		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-			{% for item in nav.items %}
+			{% for item in nav_items %}
 			<span aria-hidden="true"></span>
 			{% endfor %}
 		</a>
@@ -12,7 +12,7 @@
 	<div id="mainNavbar" class="navbar-menu">
 		<div class="navbar-start">
 
-		{% for item in nav.items %}
+		{% for item in nav_items %}
 			{# {% with item=item %} #}
 				{% if item.has_children %}
 					{% include "components/nav/dropdown.html" %}

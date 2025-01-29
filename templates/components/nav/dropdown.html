@@ -1,15 +1,15 @@
 <div class="navbar-item has-dropdown is-hoverable">
-	<a href="{{ item.url }}" class="navbar-link">{{ item.name }}</a>
+	<a href="{{ item.url }}/" class="navbar-link">{{ item.name }}</a>
 
 	<div class="navbar-dropdown">
 	{% for child in item.contains %}
 		{% if child.has_children %}
-			{% with child=item %}
-				{% include "components/nav/dropdown.html" with child as item %}
+			{% with item=child %}
+				{% include "components/nav/dropdown.html" %}
 			{% endwith %}
 		{% else %}
-			{% with child=item %}
-				{% include "components/nav/item.html" with child as item %}
+			{% with item=child %}
+				{% include "components/nav/item.html" %}
 			{% endwith %}
 		{% endif %}
 	{% endfor %}

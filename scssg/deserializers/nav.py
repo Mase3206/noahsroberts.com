@@ -5,6 +5,15 @@ import yaml
 from scssg.deserializers.base import DeserializedList, DeserializedObject
 
 
+def prefix_slug_to_url(prefix: str, slug: str):
+	if prefix == '':
+		return slug
+	elif prefix == '/':
+		return f'/{slug}'
+	else:
+		return f'{prefix}/{slug}'
+	
+
 class StyleConf(DeserializedObject):
 	classes: list[str]
 	_class_name = 'StyleConf'
@@ -24,35 +33,60 @@ class NavLinkConf(DeserializedObject):
 	slug: str
 	style: StyleConf
 	contains: NavLinks
+	has_children: bool
+	prefix: str
 	_class_name = 'NavLinkConf'
 
-	def __init__(self, data: dict):
+	def __init__(self, data: dict, prefix: str = ''):
+		self.prefix = prefix
 		for k, v in data.items():
 			if type(v) == dict:
 				if k == 'style':
 					setattr(self, k, StyleConf(v))
 				else:
 					setattr(self, k, DeserializedObject(v))
+				
 			elif type(v) == list:
+				# self.prefix = prefix
 				if k == 'contains':
-					setattr(self, k, NavLinks(v))
+					self.has_children = True
+					pref = prefix_slug_to_url(self.prefix, self.slug)
+					setattr(self, k, NavLinks(v, prefix=pref))
+				
 				else:
 					setattr(self, k, DeserializedList(v))
+			
 			else:
 				setattr(self, k, v)
 
+	def set_prefix(self, slug: str):
+		# try:
+		self.prefix = f'{self.prefix}/{slug}'
+		# except AttributeError:
+		# 	self.prefix = slug
+
+	@property
+	def url(self) -> str:
+		# return f'{self.prefix}/{self.slug}' if self.prefix != ('' or '/') else self.slug
+		return prefix_slug_to_url(self.prefix, self.slug)
+	
 
 
 class NavLinks(DeserializedList):
 	data: list[NavLinkConf]
 	_class_name = 'NavLinks'
+	# parent: NavLinkConf
 
-	def __init__(self, data: list = []):
+	def __init__(
+		self, 
+		data: list = [],
+		prefix: str = '',
+	):
 		self.data = []
 
 		for i in data:
 			if type(i) == dict:
-				self.data.append(NavLinkConf(i))
+				self.data.append(NavLinkConf(i, prefix=prefix))
 			else:
 				raise TypeError('The root element in nav.yml must contain a list of objects.')
 	
@@ -66,7 +100,7 @@ class NavLinks(DeserializedList):
 			raw = yaml.safe_load(f)
 
 		if type(raw) == list:
-			return NavLinks(raw)
+			return NavLinks(raw, prefix='/')
 		else:
 			raise TypeError(f'The root element in nav.yml must be a list. Found type {type(raw)}')
 		
@@ -83,8 +117,9 @@ class NavLinks(DeserializedList):
 
 
 def _tc():
+	from pprint import pprint
 	obj = NavLinks.deserialize('config/nav.yml')
-	print(obj)
+	pprint(obj)
 
 
 if __name__ == '__main__':
