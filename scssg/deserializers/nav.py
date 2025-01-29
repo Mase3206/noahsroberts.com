@@ -2,7 +2,7 @@ from __future__ import annotations
 from pathlib import Path
 import yaml
 
-from scssg.serializers.base import SerializedList, SerializedObject
+from scssg.deserializers.base import SerializedList, SerializedObject
 
 
 class StyleConf(SerializedObject):
