@@ -2,24 +2,24 @@ from __future__ import annotations
 from pathlib import Path
 import yaml
 
-from scssg.deserializers.base import SerializedList, SerializedObject
+from scssg.deserializers.base import DeserializedList, DeserializedObject
 
 
-class StyleConf(SerializedObject):
+class StyleConf(DeserializedObject):
 	classes: list[str]
 	_class_name = 'StyleConf'
 
 	def __init__(self, data: dict):
 		for k, v in data.items():
 			if type(v) == dict:
-				setattr(self, k, SerializedObject(v))
+				setattr(self, k, DeserializedObject(v))
 			elif type(v) == list:
-				setattr(self, k, SerializedList(v))
+				setattr(self, k, DeserializedList(v))
 			else:
 				setattr(self, k, v)
 
 
-class NavLinkConf(SerializedObject):
+class NavLinkConf(DeserializedObject):
 	name: str
 	slug: str
 	style: StyleConf
@@ -32,18 +32,18 @@ class NavLinkConf(SerializedObject):
 				if k == 'style':
 					setattr(self, k, StyleConf(v))
 				else:
-					setattr(self, k, SerializedObject(v))
+					setattr(self, k, DeserializedObject(v))
 			elif type(v) == list:
 				if k == 'contains':
 					setattr(self, k, NavLinks(v))
 				else:
-					setattr(self, k, SerializedList(v))
+					setattr(self, k, DeserializedList(v))
 			else:
 				setattr(self, k, v)
 
 
 
-class NavLinks(SerializedList):
+class NavLinks(DeserializedList):
 	data: list[NavLinkConf]
 	_class_name = 'NavLinks'
 
@@ -58,7 +58,7 @@ class NavLinks(SerializedList):
 	
 
 	@staticmethod
-	def serialize(file_path: Path | str):
+	def deserialize(file_path: Path | str):
 		if type(file_path) != Path:
 			file_path = Path(file_path)
 
@@ -83,7 +83,7 @@ class NavLinks(SerializedList):
 
 
 def _tc():
-	obj = NavLinks.serialize('config/nav.yml')
+	obj = NavLinks.deserialize('config/nav.yml')
 	print(obj)
 
 

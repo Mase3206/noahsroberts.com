@@ -5,15 +5,15 @@ from scssg.helpers import auto_repr
 from collections import UserList
 
 
-class SerializedObject:
-	_class_name = 'SerializedObject'
+class DeserializedObject:
+	_class_name = 'DeserializedObject'
 
 	def __init__(self, data: dict):
 		for k, v in data.items():
 			if type(v) == dict:
-				setattr(self, k, SerializedObject(v))
+				setattr(self, k, DeserializedObject(v))
 			elif type(v) == list:
-				setattr(self, k, SerializedList(v))
+				setattr(self, k, DeserializedList(v))
 			else:
 				setattr(self, k, v)
 	
@@ -21,17 +21,17 @@ class SerializedObject:
 		return auto_repr(self, self._class_name)
 
 
-class SerializedList(UserList):
-	_class_name = 'SerializedList'
+class DeserializedList(UserList):
+	_class_name = 'DeserializedList'
 
 	def __init__(self, data: list = []):
 		self.data = []
 
 		for i in data:
 			if type(i) == dict:
-				self.data.append(SerializedObject(i))
+				self.data.append(DeserializedObject(i))
 			elif type(i) == list:
-				self.data.append(SerializedList(i))
+				self.data.append(DeserializedList(i))
 			else:
 				self.data.append(i)
 
@@ -43,7 +43,7 @@ class SerializedList(UserList):
 		return f'[{', '.join(data_reprs)}]'
 	
 
-def yaml_serialize(file_path: Path | str):
+def yaml_deserialize(file_path: Path | str):
 	if type(file_path) != Path:
 		file_path = Path(file_path)
 
@@ -51,8 +51,8 @@ def yaml_serialize(file_path: Path | str):
 		raw = yaml.safe_load(f)
 
 	if type(raw) == dict:
-		return SerializedObject(raw)
+		return DeserializedObject(raw)
 	elif type(raw) == list:
-		return SerializedList(raw)
+		return DeserializedList(raw)
 	else:
 		raise TypeError('The root element in a Yaml object must be either a list or an object.')

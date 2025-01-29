@@ -1,9 +1,9 @@
 from .base import (
-	SerializedList,
-	SerializedObject
+	DeserializedList,
+	DeserializedObject
 )
 
 __all__ = [
-	'SerializedList',
-	'SerializedObject'
+	'DeserializedList',
+	'DeserializedObject'
 ]

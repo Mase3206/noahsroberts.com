@@ -9,7 +9,7 @@ class GlobalConfiguration(DeserializedObject):
 	_class_name = 'GlobalConfiguration'
 
 	@staticmethod
-	def serialize(file_path: Path | str):
+	def deserialize(file_path: Path | str):
 		if type(file_path) != Path:
 			file_path = Path(file_path)
 
@@ -23,7 +23,7 @@ class GlobalConfiguration(DeserializedObject):
 		
 
 def _tc():
-	obj = GlobalConfiguration.serialize('config/global.yml')
+	obj = GlobalConfiguration.deserialize('config/global.yml')
 	print(obj)
 
 if __name__ == '__main__':
