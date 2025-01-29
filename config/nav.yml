@@ -1,0 +1,15 @@
+- name: Home
+  slug: home
+  style:
+    classes: [is-bold]  # CSS classes
+
+
+- name: Hobbies
+  slug: hobbies
+  contains:
+  - name: Theatre
+    slug: theatre
+  - name: Code
+    slug: code
+  - name: Scouts
+    slug: scouts

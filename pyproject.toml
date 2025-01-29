@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "scrssg"
+name = "scssg"
 version = "0.1.0"
 description = ""
 authors = ["Noah Roberts <noah@noahsroberts.com>"]
@@ -8,6 +8,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+markdown2 = "^2.5.3"
+jinja2 = "^3.1.5"
+pyyaml = "^6.0.2"
 
 [tool.poetry.scripts]
 # build
