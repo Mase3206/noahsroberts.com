@@ -1,0 +1,53 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+	<div class="navbar-brand">
+		<a class="navbar-item" href="/">{{ global.title }}</a>
+
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+			{% for item in nav.items %}
+			<span aria-hidden="true"></span>
+			{% endfor %}
+		</a>
+	</div>
+
+	<div id="mainNavbar" class="navbar-menu">
+		<div class="navbar-start">
+
+		{% for item in nav.items %}
+			{# {% with item=item %} #}
+				{% if item.has_children %}
+					{% include "components/nav/dropdown.html" %}
+				{% else %}
+					{% include "components/nav/item.html" %}
+				{% endif %}
+			{# {% endwith %} #}
+		{% endfor %}
+
+			{# <a class="navbar-item">
+				Home
+			</a>
+
+			<a class="navbar-item">
+				Documentation
+			</a>
+
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link">
+					More
+				</a>
+
+				<div class="navbar-dropdown">
+					<a class="navbar-item">
+						About
+					</a>
+					<a class="navbar-item is-selected">
+						Jobs
+					</a>
+					<a class="navbar-item">
+						Contact
+					</a>
+					<hr class="navbar-divider">
+				</div>
+			</div> #}
+		</div>
+	</div>
+</nav>
