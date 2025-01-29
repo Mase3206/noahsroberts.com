@@ -1,7 +1,8 @@
 {
 	"files.associations": {
-		"*.html": "jinja-html",
-  	},
+		"**/dist/**/*.html": "html",
+		"**/templates/**/*.html": "jinja-html",
+	},
 	"[jinja-html]": {
 		"editor.tabSize": 2
 	},
