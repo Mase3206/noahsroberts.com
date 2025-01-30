@@ -9,18 +9,20 @@
 	<body>
 		{% include "components/nav/nav.html" %}
 
-		<aside id="toc">
-		{% block toc %}
-		{% endblock toc %}
-		</aside>
+		<div id="hiddenBelowNavmenu">
+			<aside id="toc">
+			{% block toc %}
+			{% endblock toc %}
+			</aside>
 
-		<section class="section">
-			<div class="container content">
-			{% block content %}
-			{% endblock content %}
-			</div>
-		</main>
+			<section class="section">
+				<div class="container content">
+				{% block content %}
+				{% endblock content %}
+				</div>
+			</main>
 
-		{% include "components/footer.html" %}
+			{% include "components/footer.html" %}
+		</div>
 	</body>
 </html>

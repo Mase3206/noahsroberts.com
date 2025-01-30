@@ -1,6 +1,10 @@
 import argparse
+from pathlib import Path
+import shutil
 
 from scssg.html import render_pages
+
+STATIC_DIR = Path('static')
 
 def build():
 	"""
@@ -17,12 +21,17 @@ def build():
 
 	render_pages()
 
+	source = STATIC_DIR
+	destination = Path('dist') / STATIC_DIR
+
+	if destination.exists:
+		shutil.rmtree(destination)
+
+	shutil.copytree(source, destination)
+
 
 def launch_server():
 	from http.server import HTTPServer, SimpleHTTPRequestHandler
-	# server_address = ('', 8000)
-	# httpd = HTTPServer(server_address, BaseHTTPRequestHandler)
-	# httpd.serve_forever()
 
 	class Handler(SimpleHTTPRequestHandler):
 		def __init__(self, *args, **kwargs):

@@ -1,3 +1,8 @@
+- name: Home
+  slug: home
+  hidden: true  # makes the slug known, hides the nav link
+
+
 - name: Education
   slug: education
   contains:
@@ -16,9 +21,8 @@
     slug: scouts
   - name: Theatre
     slug: theatre
-    contains:
-    - name: Homelab
-      slug: homelab
+  - name: Homelab
+    slug: homelab
 
 
 - name: Resume

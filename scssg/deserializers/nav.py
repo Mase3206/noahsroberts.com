@@ -27,12 +27,17 @@ class StyleConf(DeserializedObject):
 			else:
 				setattr(self, k, v)
 
+	@property
+	def html_classes(self):
+		return ' '.join(self.classes)
+
 
 class NavLinkConf(DeserializedObject):
 	name: str
 	slug: str
 	style: StyleConf
 	contains: NavLinks
+	hidden: bool
 	has_children: bool
 	prefix: str
 	_class_name = 'NavLinkConf'
@@ -60,6 +65,12 @@ class NavLinkConf(DeserializedObject):
 			
 			else:
 				setattr(self, k, v)
+
+		try:
+			_ = self.hidden
+		except AttributeError:
+			self.hidden = False
+
 
 	def set_prefix(self, slug: str):
 		# try:

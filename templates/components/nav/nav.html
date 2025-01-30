@@ -2,15 +2,15 @@
 	<div class="navbar-brand">
 		<a class="navbar-item" href="/">{{ global_conf.title }}</a>
 
-		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
 			{% for item in nav_items %}
 			<span aria-hidden="true"></span>
 			{% endfor %}
 		</a>
 	</div>
 
-	<div id="mainNavbar" class="navbar-menu">
-		<div class="navbar-start">
+	<div id="navbarMenu" class="navbar-menu">
+		<div class="navbar-end">
 
 		{% for item in nav_items %}
 			{# {% with item=item %} #}
@@ -21,33 +21,11 @@
 				{% endif %}
 			{# {% endwith %} #}
 		{% endfor %}
-
-			{# <a class="navbar-item">
-				Home
-			</a>
-
-			<a class="navbar-item">
-				Documentation
-			</a>
-
-			<div class="navbar-item has-dropdown is-hoverable">
-				<a class="navbar-link">
-					More
-				</a>
-
-				<div class="navbar-dropdown">
-					<a class="navbar-item">
-						About
-					</a>
-					<a class="navbar-item is-selected">
-						Jobs
-					</a>
-					<a class="navbar-item">
-						Contact
-					</a>
-					<hr class="navbar-divider">
-				</div>
-			</div> #}
 		</div>
 	</div>
 </nav>
+
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/nav.js"></script>
+
+<link rel="stylesheet" href="/static/css/nav.css" />
