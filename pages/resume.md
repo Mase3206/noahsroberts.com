@@ -1,33 +1,19 @@
 ---
 title: Resume  # optional if a matching slug in nav.yml is found
 slug: resume
-other: data
-question: yes
-digit: 5
+template: page
 ---
 
-# Hi
+## Contact
 
-hello
+Please don’t hesitate to reach out with the contact information to the right. Samples of my projects are available upon request if public links are unavailable.
 
-## this is h2
+noah@noahsroberts.com
+Missoula, MT
 
-```
-codeblock
-```
+<details>
+<summary>View resume</summary>
 
-- list
-- items
+> The file viewer will go here.
 
-1. ordered
-2. list
-
-> block quote
-> multiline
-
----
-
-> [!NOTE]
-> callout
-
-
+</details>

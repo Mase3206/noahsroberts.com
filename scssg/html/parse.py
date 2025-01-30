@@ -9,13 +9,14 @@ from scssg import (
 	NAV_CONF,
 	SLUGS,
 )
-from scssg.html import (
+from scssg.html.base import (
 	PAGES_PATH,
 	POSTS_PATH,
 	OUTPUT_PATH,
+	TEMPLATE_PATH,
 )
 
-
+TEMPLATES = {t.stem: t.relative_to(TEMPLATE_PATH) for t in TEMPLATE_PATH.glob('**/*.html')}
 PAGES = PAGES_PATH.glob('**/*.md')
 POSTS = POSTS_PATH.glob('**/*.md')
 
@@ -26,6 +27,14 @@ class Page:
 	def __init__(self, path: Path) -> None:
 		self.path = path
 
+		with open(self.path, 'r') as f:
+			self.meta, content = frontmatter.parse(f.read())
+		self.content = md.convert(content)
+
+		self.title = str(self.meta['title'])
+		self.slug = str(self.meta['slug'])
+		self.template_name = str(self.meta['template'])
+
 
 	@property
 	def dest(self) -> Path:
@@ -34,40 +43,32 @@ class Page:
 		"""
 		page_path = self.path.relative_to(PAGES_PATH).parent
 		return page_path / (self.path.stem + '.html')
+	
 
-
-	def convert(self):
-		with open(self.path, 'r') as f:
-			self.meta, content = frontmatter.parse(f.read())
-		self.content = md.convert(content)
-
-		return self.meta, self.content
+	@property
+	def template(self) -> Path:
+		"""Return the path to the template as set in the front matter."""
+		if (template := TEMPLATES.get(self.template_name, None)):
+			return template
+		else:
+			raise FileNotFoundError(f'Template {self.template_name}.html for type {self.template_name} not found in the templates directory {TEMPLATE_PATH}')
 	
 
 	def save_html(self):
 		"""Saves the converted HTML to the destination path. THIS DOES NOT USE THE TEMPLATES!"""
-		try:
-			content = self.content
-		except AttributeError:
-			self.convert()
-			content = self.content
-		finally:
-			(OUTPUT_PATH / self.dest).parent.mkdir(exist_ok=True, parents=True)
-			with open(OUTPUT_PATH / self.dest, 'w+') as f:
-				f.write(content)
+		
+		(OUTPUT_PATH / self.dest).parent.mkdir(exist_ok=True, parents=True)
+		with open(OUTPUT_PATH / self.dest, 'w+') as f:
+			f.write(self.content)
 
 	
 
+	
 	def match_to_nav(self):
-		try:
-			keys = self.meta.keys()
-		except AttributeError as e:
-			self.convert()
-			keys = self.meta.keys()
-		finally:
-			if 'slug' in keys:
-				slug = str(self.meta['slug'])
-				return SLUGS[slug]
+		if 'slug' in self.meta.keys():
+			slug = str(self.meta['slug'])
+			return SLUGS.get(slug, None)
+
 
 
 def all_pages():
@@ -84,12 +85,10 @@ def all_pages():
 
 
 def _tc():
-	# p = Page(PAGES_PATH / Path('hobbies/index.md'))
-	# print(p.convert())
-	# print(p.match_to_nav())
-	# print(p.dest)
-	# p.save_html()
-	all_pages()
+	p = Page(PAGES_PATH / Path('resume.md'))
+	print(p.match_to_nav())
+	print(p.dest)
+	print(p.template)
 
 if __name__ == '__main__':
 	_tc()

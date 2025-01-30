@@ -1,14 +1,24 @@
-from jinja2 import meta
+from warnings import warn
 from pathlib import Path
 
 from scssg import (
 	GLOBAL_CONF,
 	NAV_CONF
 )
-from scssg.html import (
+from scssg.html.base import (
 	env,
-	OUTPUT_PATH
+	PAGES_PATH,
+	POSTS_PATH,
+	OUTPUT_PATH,
+	TEMPLATE_PATH,
 )
+from scssg.html.parse import Page
+
+
+
+TEMPLATES = {t.stem: t.relative_to(TEMPLATE_PATH) for t in TEMPLATE_PATH.glob('**/*.html')}
+PAGES = PAGES_PATH.glob('**/*.md')
+POSTS = POSTS_PATH.glob('**/*.md')
 
 
 class TestPageConf:
@@ -17,25 +27,32 @@ class TestPageConf:
 	source = 'test.md'
 
 
-def render_to_html(template: Path, page: TestPageConf):
-	t = env.get_template(str(template))
-	r = t.render(
+def render_single_page(page: Page):
+	template = env.get_template(str(page.template))
+	rendered = template.render(
 		nav_items = NAV_CONF,
 		global_conf = GLOBAL_CONF,
 		page = page,
 	)
-	with open(OUTPUT_PATH / template.parent / (page.slug + '.html'), 'w+') as out:
-		out.write(r)
 
-	return r
+	outpath = OUTPUT_PATH / page.dest
+	outpath.parent.mkdir(exist_ok=True, parents=True)
+	with open(outpath, 'w+') as out:
+		out.write(rendered)
 
+	return rendered
+
+
+def render_pages():
+	for pf in PAGES:
+		po = Page(pf)
+		if not po.match_to_nav():
+			warn(f"Discovered page at {pf} is not found in the nav.yml configuration file. This will prevent scssg from automatically linking to the output file.")
+		render_single_page(po)
 
 
 def _tc():
-	out = render_to_html(
-		Path('base.html'),
-		TestPageConf(),
-	)
+	out = render_single_page(Page(PAGES_PATH / Path('resume.md')),)
 	print(out)
 
 

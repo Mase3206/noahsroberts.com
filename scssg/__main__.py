@@ -1,4 +1,6 @@
-import subprocess
+import argparse
+
+from scssg.html import render_pages
 
 def build():
 	"""
@@ -12,3 +14,42 @@ def build():
 		3. Resolve `base` and `include` template tags
 	2. Build Sass styling
 	"""
+
+	render_pages()
+
+
+def launch_server():
+	from http.server import HTTPServer, SimpleHTTPRequestHandler
+	# server_address = ('', 8000)
+	# httpd = HTTPServer(server_address, BaseHTTPRequestHandler)
+	# httpd.serve_forever()
+
+	class Handler(SimpleHTTPRequestHandler):
+		def __init__(self, *args, **kwargs):
+			super().__init__(*args, directory='dist', **kwargs)
+	
+	with HTTPServer(
+		server_address = ('', 8000),
+		RequestHandlerClass = Handler,
+	) as httpd:
+		print('\nNow serving at http://localhost:8000')
+		try:
+			httpd.serve_forever()
+		except KeyboardInterrupt:
+			print('\nStopping dev server...')
+			exit(0)
+		
+
+
+
+def cli():
+	parser = argparse.ArgumentParser()
+
+	parser.add_argument('--serve', action='store_true')
+
+	args = parser.parse_args()
+
+
+	build()
+	if args.serve:
+		launch_server()
