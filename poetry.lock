@@ -182,6 +182,25 @@ pluggy = ">=1.5,<2"
 dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
+name = "python-frontmatter"
+version = "1.1.0"
+description = "Parse and manage posts with YAML (or other) frontmatter"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "python-frontmatter-1.1.0.tar.gz", hash = "sha256:7118d2bd56af9149625745c58c9b51fb67e8d1294a0c76796dafdc72c36e5f6d"},
+    {file = "python_frontmatter-1.1.0-py3-none-any.whl", hash = "sha256:335465556358d9d0e6c98bbeb69b1c969f2a4a21360587b9873bfc3b213407c1"},
+]
+
+[package.dependencies]
+PyYAML = "*"
+
+[package.extras]
+docs = ["sphinx"]
+test = ["mypy", "pyaml", "pytest", "toml", "types-PyYAML", "types-toml"]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.2"
 description = "YAML parser and emitter for Python"
@@ -247,4 +266,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "f85b35cec610c59d30e5a7947803a2bab4fff253a9eea68d975b8e004adb6373"
+content-hash = "678d0360476ad6d11ba9b78ce1229af37aa8baa746bf1eaaec4c02ac8840b827"

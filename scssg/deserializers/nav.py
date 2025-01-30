@@ -39,6 +39,8 @@ class NavLinkConf(DeserializedObject):
 
 	def __init__(self, data: dict, prefix: str = ''):
 		self.prefix = prefix
+		self.has_children = False
+		
 		for k, v in data.items():
 			if type(v) == dict:
 				if k == 'style':
@@ -113,6 +115,20 @@ class NavLinks(DeserializedList):
 			data_reprs.append(repr(d))
 
 		return f'{self._class_name}([{', '.join(data_reprs)}])'
+
+
+
+def collect_slugs(nav_conf: NavLinks) -> dict[str, NavLinkConf]:
+	slugs: dict[str, NavLinkConf] = {}
+	for l in nav_conf:
+		slugs[l.slug] = l
+
+		if l.has_children:
+			s = collect_slugs(l.contains)
+			for k, v in s.items():
+				slugs[k] = v
+	
+	return slugs
 
 
 
