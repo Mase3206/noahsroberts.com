@@ -1,0 +1,31 @@
+$navbar-fade-duration: 2s
+
+@keyframes fadeIn
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+@keyframes fadeOut
+	0%
+		opacity: 1
+	100%
+		opacity: 0
+
+
+.navbar-menu.is-active
+	opacity: 1
+
+.hidden-below-navmenu
+	overflow: hidden
+	opacity: 1
+	// transition: opacity 0.5s ease
+
+	&.is-hidden
+		opacity: 0
+
+.fadeIn
+	animation: fadeIn $navbar-fade-duration forwards
+
+.fadeOut
+	animation: fadeOut $navbar-fade-duration forwards
