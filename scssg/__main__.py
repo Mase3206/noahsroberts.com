@@ -3,6 +3,7 @@ from pathlib import Path
 import shutil
 
 from scssg.html import render_pages
+from scssg.sass import build as build_sass
 
 STATIC_DIR = Path('static')
 
@@ -12,12 +13,14 @@ def build():
 
 	Full build steps
 	----------------
-	1. Compile HTML from templates
+	1. Build Sass styling
+	2. Compile HTML from templates
 		1. Convert Markdown to HTML
 		2. Insert converted Markdown into templates
 		3. Resolve `base` and `include` template tags
-	2. Build Sass styling
 	"""
+
+	build_sass()
 
 	render_pages()
 
