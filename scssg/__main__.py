@@ -7,7 +7,7 @@ from scssg.sass import build as build_sass
 
 STATIC_DIR = Path('static')
 
-def build():
+def build(args: argparse.Namespace):
 	"""
 	Build the site.
 
@@ -20,10 +20,10 @@ def build():
 		3. Resolve `base` and `include` template tags
 	"""
 
+	print('Building CSS stylesheet from Sass source')
 	build_sass()
 
-	render_pages()
-
+	print('Copying built CSS stylesheet to dist folder')
 	source = STATIC_DIR
 	destination = Path('dist') / STATIC_DIR
 
@@ -32,8 +32,11 @@ def build():
 
 	shutil.copytree(source, destination)
 
+	print('Rendering Markdown pages to HTML and saving to dist folder')
+	render_pages()
 
-def launch_server():
+
+def serve(args: argparse.Namespace):
 	from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 	class Handler(SimpleHTTPRequestHandler):
@@ -56,12 +59,17 @@ def launch_server():
 
 def cli():
 	parser = argparse.ArgumentParser()
+	parser.set_defaults(func=lambda args: (parser.print_usage(), exit(1)))
 
-	parser.add_argument('--serve', action='store_true')
+	sp = parser.add_subparsers()
+
+	sp_serve = sp.add_parser('serve')
+	# sp_serve.add_argument('--watch', action='store_true')
+	sp_serve.set_defaults(func=lambda args: (build(args), serve(args)))
+
+	sp_build = sp.add_parser('build')
+	sp_build.set_defaults(func=build)
 
 	args = parser.parse_args()
 
-
-	build()
-	if args.serve:
-		launch_server()
+	args.func(args)
