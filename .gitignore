@@ -172,5 +172,4 @@ cython_debug/
 
 # Misc.
 **.DS_Store
-**/**.css
-**.css
+static/css/
