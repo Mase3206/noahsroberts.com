@@ -1,5 +1,8 @@
 **scssg** (pronounced /ˈskɪsɪg/ <sup>[?](https://en.wikipedia.org/wiki/Help:IPA/English)</sup>) is a **s**uper **c**ustomizable **s**tatic **s**ite **g**enerator. Pages and posts are written in Markdown with Jekyll-style frontmatter for metadata. Site structure is laid out in a single YAML file that automatically updates navigation. 
 
+> [!WARNING]
+> **Heads up,** this is a hobby project. While it's possible to fork this and make it your own, that's not my intention. It's a place for me to host my site when I eventually (maybe) abandon WordPress. It's also a bit janky.
+
 ## Features
 
 - Write in familiar and human-readable Markdown, just like every other static site generator.
@@ -11,6 +14,4 @@
 
 - Easy install! (unlike Jekyll)
 - Extremely customizable! No hidden theme or template folders, everything is right there in your project folder (unlike Jekyll)
-
-> [!WARNING]
-> **Heads up,** this is a hobby project. I can't promise it will work for everyone.
+- Because I can.
