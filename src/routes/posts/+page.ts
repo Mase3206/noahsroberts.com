@@ -1,5 +1,3 @@
-import type { List } from 'immutable';
-
 export async function load({ fetch }) {
 	const response = await fetch('/api/posts');
 
