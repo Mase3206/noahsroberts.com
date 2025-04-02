@@ -1,17 +1,38 @@
-**scssg** (pronounced /ˈskɪsɪg/ <sup>[?](https://en.wikipedia.org/wiki/Help:IPA/English)</sup>) is a **s**uper **c**ustomizable **s**tatic **s**ite **g**enerator. Pages and posts are written in Markdown with Jekyll-style frontmatter for metadata. Site structure is laid out in a single YAML file that automatically updates navigation. 
+# sv
 
-> [!WARNING]
-> **Heads up,** this is a hobby project. While it's possible to fork this and make it your own, that's not my intention. It's a place for me to host my site when I eventually (maybe) abandon WordPress. It's also a bit janky.
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Features
+## Creating a project
 
-- Write in familiar and human-readable Markdown, just like every other static site generator.
-- Configurable, automatic navigation menus
-- Completely customizable templates and styling using Jinja and Sass
-- Global and/or per-page, category, or topic posts
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Why scssg?
+```bash
+# create a new project in the current directory
+npx sv create
 
-- Easy install! (unlike Jekyll)
-- Extremely customizable! No hidden theme or template folders, everything is right there in your project folder (unlike Jekyll)
-- Because I can.
+# create a new project in my-app
+npx sv create my-app
+```
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
