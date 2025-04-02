@@ -1,7 +1,7 @@
 <script>
 	import Header from '$lib/components/Header.svelte'
+	import Footer from '$lib/components/Footer.svelte'
 	import '$lib/styles/style.sass'
-	import '$lib/styles/prism-gruvbox-dark.css'
 </script>
 
 <Header />
@@ -10,4 +10,4 @@
 	<slot />
 </main>
 
-<footer>And this is the footer.</footer>
+<Footer />
