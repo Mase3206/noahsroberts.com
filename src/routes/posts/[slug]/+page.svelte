@@ -1,7 +1,7 @@
 <script>
 	// mdsvex doesn't really work with v5, runes, and $props.
 	export let data;
-	const { title, date, Content } = data;
+	const { title, date, categories, Content } = data;
 </script>
 
 <article>
@@ -9,3 +9,17 @@
 	<p>Published: {date}</p>
 	<Content />
 </article>
+
+
+<aside>
+	{#if categories}
+		<h2>Posted in:</h2>
+		<ul>
+			{#each categories as category}
+				<li><a href="/blog/category/{category}">{category}</a></li>
+			{/each}
+		</ul>
+	{:else}
+		<h2>Not posted in any categories.</h2>
+	{/if}
+</aside>
