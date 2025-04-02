@@ -1,19 +1,15 @@
-<!-- post.svelte -->
 <script>
-	let { 
-		// metadata
-		title,
-		date,
-		// post content
-		children
-	} = $props();
-	
+	// not a prop, filled in internally
+	export let data;
 </script>
 
-<article>
-	<h1>{title}</h1>
+<h1>Posts</h1>
 
-	<p>Published: {date}</p>
-
-	{@render children?.() }
-</article>
+<ul>
+	{#each data.posts as post}
+		<li>
+			<h2><a href="{post.path}">{post.meta.title}</a></h2>
+			Published {post.meta.date}
+		</li>
+	{/each}
+</ul>
