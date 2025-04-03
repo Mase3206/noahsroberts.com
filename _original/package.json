@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "svelte": "^5.25.6"
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-static": "^3.0.8"
-  }
-}
