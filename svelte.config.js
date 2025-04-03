@@ -6,7 +6,12 @@ const config = {
 	preprocess: [
 		vitePreprocess(), 
 		mdsvex({
-			extensions: ['.md']
+			extensions: ['.md'],
+			layout: {
+				// no layout for posts, as those are handled dynamically
+				
+				normal_page: 'src/lib/layouts/normal_page.svelte',
+			}
 		})
 	],
 	kit: { adapter: adapter() },

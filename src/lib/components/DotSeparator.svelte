@@ -3,8 +3,7 @@
 	div {
 		font-size: 1.5em;
 		letter-spacing: 2em;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 2em auto;
 		padding-left: 2em;
 		text-align: center;
 	}
