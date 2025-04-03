@@ -2,6 +2,9 @@
 	p {
 		font-weight: 100;
 	}
+	footer {
+		margin: 4em 2em 0em 2em;
+	}
 </style>
 
 

@@ -1,10 +1,10 @@
 <script>
-	import Header from '$lib/components/Header.svelte'
+	import DesktopNavbar from '$lib/components/DesktopNavbar.svelte'
 	import Footer from '$lib/components/Footer.svelte'
 	import '$lib/styles/style.sass'
 </script>
 
-<Header />
+<DesktopNavbar />
 
 <main>
 	<slot />
