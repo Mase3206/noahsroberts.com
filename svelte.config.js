@@ -4,7 +4,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 const config = {
 	preprocess: [
-		vitePreprocess(), 
+		// vitePreprocess(),  // sass preprocessor
 		mdsvex({
 			extensions: ['.md'],
 			layout: {
@@ -15,7 +15,7 @@ const config = {
 		})
 	],
 	kit: { adapter: adapter() },
-	extensions: ['.svelte', '.md']
+	extensions: ['.svelte', '.md'],
 };
 
 export default config;
