@@ -4,6 +4,14 @@
 	const { title, date, categories, Content } = data;
 </script>
 
+<style>
+	h1 {
+		font-weight: normal;
+		text-align: left;
+		margin-bottom: 1em;
+	}
+</style>
+
 <article>
 	<h1>{title}</h1>
 	<p>Published: {date}</p>
