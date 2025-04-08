@@ -1,18 +1,38 @@
 <script>
-	import Navbar from '$lib/components/nav/Navbar.svelte'
-	// import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
-  // import { ChevronDownOutline } from 'flowbite-svelte-icons';
-  // import { page } from '$app/stores';  // TODO: figure out deprecation
-  // $: activeUrl = $page.url.pathname;
+	import Navbar from '$lib/components/nav/Navbar.svelte';
+	import NavItem from '$lib/components/nav/NavItem.svelte';
+	import NavBrand from '$lib/components/nav/NavBrand.svelte';
+	import NavItemContainer from '$lib/components/nav/NavItemContainer.svelte';
+	import NavDropdown from '$lib/components/nav/NavDropdown.svelte';
 
 	import Footer from '$lib/components/Footer.svelte'
 	import '$lib/css/main.css'
 	// import '$lib/styles/style.sass'
 </script>
 
-<Navbar />
+<Navbar>
+	<NavBrand>Noah S. Roberts</NavBrand>
 
-<main class="p-4 my-8 mx-auto max-w-160 overflow-hidden md:overflow-auto">
+	<NavItemContainer>
+		<NavDropdown href="/education" title="Education">
+			<NavItem href="/education/dhc">DHC</NavItem>
+			<NavItem href="/education/gli">GLI</NavItem>
+		</NavDropdown>
+		
+		<!-- code, scouts, theatre, homelab -->
+		<NavDropdown href="/hobbies" title="Hobbies">
+			<NavItem href="/hobbies/code">Code</NavItem>
+			<NavItem href="/hobbies/scouts">Scouts</NavItem>
+			<NavItem href="/hobbies/theatre">Theatre</NavItem>
+			<NavItem href="/hobbies/homelab">Homelab</NavItem>
+		</NavDropdown>
+
+		<NavItem href="/posts">Posts</NavItem>
+		<NavItem href="/resume">Resume</NavItem>
+	</NavItemContainer>
+</Navbar>
+
+<main class="px-8 py-0 my-8 mx-auto max-w-180 overflow-x-visible whitespace-no-wrap">
 	<slot />
 </main>
 

@@ -43,4 +43,15 @@
 			text-decoration: none;
 		}
 	}
+	p {
+		margin: 1em 0em;
+	}
+
+
+	@media (prefers-color-scheme: dark) {
+		body {
+			background-color: var(--color-neutral-900);
+			color: var(--color-neutral-100);
+		}
+	}
 }

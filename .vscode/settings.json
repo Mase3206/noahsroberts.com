@@ -26,7 +26,7 @@
 		"**/templates/**/*.svelte": "svelte",
 		"**/templates/**/*.svelte.js": "javascript",
 		"**/templates/**/*.svelte.ts": "typescript",
-		"src/lib/css/main.css": "tailwindcss",
+		"**/src/lib/css/main.css": "tailwindcss",
 	},
 
 	// HTML Templates
