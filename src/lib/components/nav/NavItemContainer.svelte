@@ -13,16 +13,16 @@
 <nav class="ml-auto">
 	<!-- Small screens -->
 	<button 
-		class="block md:hidden hover:bg-gray-200 rounded-sm p-1 ml-auto mr-0"
+		class="block md:hidden hover:bg-gray-200 dark:hover:bg-neutral-700 rounded-sm p-1 ml-auto mr-0"
 		onclick={onClickDropdown}
 	>
 		<!-- Menu icon -->
 		<Menu />
 	</button>
 
-	<div class="{isDropdownOpen ? 'block' : 'hidden'} md:hidden fixed top-0 left-0 mt-0 px-8 h-full w-screen bg-white">
+	<div class="{isDropdownOpen ? 'block' : 'hidden'} md:hidden fixed top-0 left-0 mt-0 px-8 pb-4 h-full w-screen bg-white dark:bg-neutral-900 overflow-scroll">
 		<button 
-		class="block md:hidden hover:bg-gray-200 rounded-sm p-1 mt-8 ml-auto mr-0"
+		class="block md:hidden hover:bg-gray-200 dark:hover:bg-neutral-700 rounded-sm p-1 mt-8 ml-auto mr-0"
 		onclick={onClickDropdown}
 		>
 			<X />
