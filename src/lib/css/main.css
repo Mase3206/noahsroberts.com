@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "./gruvbox-dark.css";
+
+@theme {
+	--font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+@layer base {
+	/* set default sizes and margins for headers (which Tailwind removes by default for some dumb reason) */
+	h1, h2, h3, h4 {
+		margin-top: 1em;
+	}
+	h1 {
+		font-size: var(--text-6xl);
+		font-weight: 100;
+		text-align: center;
+		margin-bottom: 3em;
+	}
+	h2 {
+		font-size: var(--text-4xl);
+		margin-bottom: 0.5em;
+	}
+	h3, h4 {
+		margin-bottom: 0.25em;
+	}
+	h3 {
+		font-size: var(--text-2xl);
+	}
+	h4 {
+		font-size: var(--text-lg);
+	}
+	
+	/* other global default styles */
+	body {
+		margin: 2em 0em;
+	}
+	img {
+		max-width: 100%;
+	}
+	a {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

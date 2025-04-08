@@ -1,17 +1,11 @@
-**scssg** (pronounced /ˈskɪsɪg/ <sup>[?](https://en.wikipedia.org/wiki/Help:IPA/English)</sup>) is a **s**uper **c**ustomizable **s**tatic **s**ite **g**enerator. Pages and posts are written in Markdown with Jekyll-style frontmatter for metadata. Site structure is laid out in a single YAML file that automatically updates navigation. 
+# noahsroberts.com
 
-> [!WARNING]
-> **Heads up,** this is a hobby project. While it's possible to fork this and make it your own, that's not my intention. It's a place for me to host my site when I eventually (maybe) abandon WordPress. It's also a bit janky.
+This is the source code to my main website, [noahsroberts.com](https://noahsroberts.com). It's a full recreation of my existing Wordpress site (which is currently still live) entirely in SvelteKit, both as a learning project and a way to save $48 a year.
 
-## Features
+## Why not another static site generator?
 
-- Write in familiar and human-readable Markdown, just like every other static site generator.
-- Configurable, automatic navigation menus
-- Completely customizable templates and styling using Jinja and Sass
-- Global and/or per-page, category, or topic posts
+I have tried a few previous SSGs, like Jekyll and Hugo, but they aren't customizeable enough for my needs. Hugo might be, but I didn't end up diving into it much.
 
-## Why scssg?
+I hate Jekyll. It's a piece of unusable garbage that is barely installable in macOS, and even then, the underlying theme(s) are hidden away from you, making it basically impossible to customize. 
 
-- Easy install! (unlike Jekyll)
-- Extremely customizable! No hidden theme or template folders, everything is right there in your project folder (unlike Jekyll)
-- Because I can.
+So I'm doing it all myself.
