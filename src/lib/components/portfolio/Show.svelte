@@ -2,14 +2,14 @@
 	import type { Snippet } from 'svelte';
 	
 	let {
-		details,
 		title,
 		author,
+		details,
 		children,
 	}: {
-		details: { name: string, content: string }[];
 		title: string;
 		author: string;
+		details: { name: string, content: string }[];
 		children: Snippet;
 	} = $props();
 </script>
@@ -36,7 +36,8 @@
 	</div>
 
 	<div class="flex flex-wrap">
-		{#each details as d}  <!-- Iterate over all of the given details -->
+		<!-- Iterate over all of the given details -->
+		{#each details as d}
 			{@render detail(d)}
 		{/each}
 	</div>
