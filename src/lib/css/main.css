@@ -46,4 +46,12 @@
 	p {
 		margin: 1em 0em;
 	}
+
+
+	@media (prefers-color-scheme: dark) {
+		body {
+			background-color: var(--color-neutral-900) /* oklch(27.8% 0.033 256.848) = #1e2939 */;
+			color: var(--color-neutral-100);
+		}
+	}
 }
