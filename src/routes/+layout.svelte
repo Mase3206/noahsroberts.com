@@ -18,7 +18,7 @@
 	</NavItemContainer>
 </Navbar>
 
-<main class="p-4 my-8 mx-auto max-w-160 overflow-hidden md:overflow-auto">
+<main class="px-8 py-0 my-8 mx-auto max-w-180 overflow-x-visible whitespace-no-wrap">
 	<slot />
 </main>
 
