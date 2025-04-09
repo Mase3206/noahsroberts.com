@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'Cousine Nerd Font';
+	src: url('/fonts/Cousine/CousineNerdFont-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cousine Nerd Font';
+	src: url('/fonts/Cousine/CousineNerdFont-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cousine Nerd Font';
+	src: url('/fonts/Cousine/CousineNerdFont-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Cousine Nerd Font';
+	src: url('/fonts/Cousine/CousineNerdFont-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}

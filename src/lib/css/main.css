@@ -1,3 +1,6 @@
+/* Load Cousine Nerd Font */
+@import url('/fonts/Cousine/cousine.css');
+
 @import "tailwindcss";
 @import "./gruvbox-dark.css";
 

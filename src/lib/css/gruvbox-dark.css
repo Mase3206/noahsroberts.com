@@ -1,7 +1,7 @@
 code[class*=language-],
 pre[class*=language-] {
   color: #ebdbb2;
-  font-family: "Cousine Nerd Font", "Cousine for Powerline", Cousine, Consolas, Monaco, "Andale Mono", monospace;
+  font-family: "Cousine Nerd Font", Cousine, Consolas, Monaco, "Andale Mono", monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -91,5 +91,3 @@ pre[class*=language-] {
 .token.deleted {
   background: #fb4934;
 }
-
-/*# sourceMappingURL=gruvbox-dark.css.map */
