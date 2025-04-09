@@ -24,7 +24,7 @@
 		<h2>Posted in:</h2>
 		<ul>
 			{#each categories as category}
-				<li><a href="/blog/category/{category}">{category}</a></li>
+				<li><a href="/posts/category/{category}">{category}</a></li>
 			{/each}
 		</ul>
 	{:else}
