@@ -6,6 +6,8 @@ layout: normal_page
 
 <script>
 	import DotSeparator from '$lib/components/DotSeparator.svelte';
+	import PdfViewer from '$lib/components/PdfViewer.svelte';
+	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 </script>
 
 The [Davidson Honors College](http://dhc.umt.edu/) is located at the University of Montana and is funded in part by community donations. It offers scholarships for undergraduate students, graduate students, and study abroad programs. Many students in the DHC are also members of the [Franke GLI](/education/gli), as they attract a similar audience.
@@ -20,8 +22,8 @@ Here you can find the archives of my work while in the DHC. The download links t
 
 This project is a final reflection on the individual honors experience. I read an original poem as part of an auditory experience. It is best experienced with high-quality headphones.
 
-<!-- TODO: audio embed -->
-<!-- TODO: explanation -->
+<AudioPlayer src="/assets/wimtbh.wav" />
+<PdfViewer file="/assets/wimtbh-explanation-1.pdf" altText="WIMTBH Explanation.pdf" />
 
 ### TOTSME Reflection
 

@@ -49,6 +49,9 @@
 	p {
 		margin: 1em 0em;
 	}
+	audio {
+		width: 100%;
+	}
 
 
 	@media (prefers-color-scheme: dark) {
