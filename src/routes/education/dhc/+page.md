@@ -29,7 +29,7 @@ This project is a final reflection on the individual honors experience. I read a
 
 TOTSME (Trick Or Treat So Missoula Eats) is an annual tradition held by the DHC. Honors students go door to door and drop off an informational flier asking residents to collect non-perishable food items to donate to the Missoula Food Bank. We then return a week later to pick up the donations and hand them off to the Food Bank.
 
-<!-- TODO: PDF embed -->
+<PdfViewer file="/assets/totsme-reflection.pdf" altText="TOTSME Reflection.pdf" />
 
 ### *Braiding Sweetgrass* Summative Piece
 
@@ -37,7 +37,7 @@ For this assignment, we were tasked with taking a component of Robin Wall Kimmer
 
 I wrote a poem about the values of reciprocity and respect for nature as taught in [Scouts](/hobbies/scouts), to which I dedicated over a decade of my life. The file is attached below.
 
-<!-- TODO: PDF embed -->
+<PdfViewer file="/assets/braiding-sweetgrass-summative-piece.pdf" altText="Braiding Sweetgrass Summative Piece.pdf" />
 
 ### Academic Plan
 
@@ -45,16 +45,16 @@ Here, we were tasked with laying out a plan for our college careers in terms of 
 
 I added a fifth year to the plan because, even with my thirty-nine transfer credits, five of the next seven semesters have over eighteen credits. I earned my MUS Core certificate to check off the general education requirements specifically so I wouldn’t have to take more than fifteen credits per semester. I would rather uphold this plan than cram more credits in per semester, as this works better with how my brain operates.
 
-<!-- TODO: PDF embed -->
+<PdfViewer file="/assets/academic-plan-1.pdf" altText="Academic Plan.pdf" />
 
 ### Academic Narrative
 
 The goal of this short essay was to think of the long-term goals of one’s education and life and to discuss how those can be achieved. I began with a short retrospective of my education, then transitioned to my dreams and goals.
 
-<!-- TODO: PDF embed -->
+<PdfViewer file="/assets/academic-narrative.pdf" altText="Academic Narrative.pdf" />
 
 ### "I Am From" Poem
 
 The goal of this poem was to focus on what makes each individual person themselves. I wrote about coming from family food traditions, odd passions, and growth. 
 
-<!-- TODO: PDF embed -->
+<PdfViewer file="/assets/i-am-from-poem.pdf" altText="'I Am From' Poem.pdf" />
