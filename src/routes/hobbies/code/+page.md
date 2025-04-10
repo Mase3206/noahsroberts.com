@@ -12,4 +12,9 @@ Within four years, I became fairly confident in my coding abilities. I had branc
 
 Below is a selection of the code I am most proud of, with my first public package at the top. My code uses [version 3 of the GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) (GPLv3), unless otherwise stated.
 
+
+## Related Updates
+
+(This feature has not been set up yet.)
+
 <!-- TODO: relevant posts -->
