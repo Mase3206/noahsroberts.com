@@ -1,8 +1,20 @@
 <script>
 	import Show from "$lib/components/portfolio/Show.svelte";
+	import DotSeparator from "$lib/components/DotSeparator.svelte";
 </script>
 
 <h1>Theatre.</h1>
+
+<p>
+	Here is a selection of the theatrical projects I am most proud of. My original samples use CC BY-SA-NC 4.0. Any other licenses for specific audio clips will be noted in the file name and in a license index file.
+</p>
+
+<h2>Related Updates</h2>
+
+<p>(This feature has not been set up yet.)</p>
+<!-- TODO: relevant updates -->
+
+<DotSeparator />
 
 <Show 
 	title="The Adding Machine"

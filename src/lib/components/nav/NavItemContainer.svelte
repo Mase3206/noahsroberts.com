@@ -1,5 +1,6 @@
 <script>
 	import { Menu, X } from "@lucide/svelte";
+	import { onNavigate } from '$app/navigation';
 
 	let { children } = $props();
 
@@ -8,6 +9,10 @@
 		isDropdownOpen = !isDropdownOpen;
 	}
 	$inspect(isDropdownOpen);
+
+	onNavigate(() => {
+		isDropdownOpen = false;
+	})
 </script>
 
 <nav class="ml-auto">

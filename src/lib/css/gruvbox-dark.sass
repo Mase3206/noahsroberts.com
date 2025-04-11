@@ -1,0 +1,134 @@
+/// This has the Gruvbox Dark style for Prism.js 
+/// Original source: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-gruvbox-dark.css
+
+
+$fg1: #ebdbb2
+$fg0: #fbf1c7
+$bg4: #7c6f64
+$bg4_h: #1d2021
+$fg4: #a89984
+
+$red2: #fb4934
+$yellow2: #fabd2f
+$purple2: #d3869b
+$green2: #b8bb26
+// $fg: $fg1
+
+
+code[class*="language-"], 
+pre[class*="language-"]
+    color: $fg1
+    font-family: 'Cousine Nerd Font', Cousine, Consolas, Monaco, "Andale Mono", monospace
+    direction: ltr
+    text-align: left
+    white-space: pre
+    word-spacing: normal
+    word-break: normal
+    line-height: 1.5
+
+    -moz-tab-size: 4
+    -o-tab-size: 4
+    tab-size: 4
+
+    -webkit-hyphens: none
+    -moz-hyphens: none
+    -ms-hyphens: none
+    hyphens: none
+
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection
+    color: $fg0
+    background: $bg4
+
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection
+    color: $fg0
+    background: $bg4
+
+
+// Code blocks
+pre[class*="language-"]
+    padding: 1em
+    margin: 0.5em 0
+    overflow: auto
+
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"]
+    background: $bg4_h
+
+
+// Inline code
+:not(pre) > code[class*="language-"]
+    padding: 0.1em
+    border-radius: 0.3em
+
+
+// Per-token styling
+.token
+    &.comment,
+    &.prolog,
+    &.cdata,
+    &.operator,
+    &.punctuation,
+    &.attr-name
+        color: $fg4
+
+    &.delimiter,
+    &.boolean,
+    &.keyword,
+    &.selector,
+    &.important,
+    &.atrule,
+    &.property,
+    &.constant,
+    &.variable
+        color: $red2
+
+
+    &.tag,
+    &.doctype,
+    &.builtin,
+    &.function
+        color: $yellow2
+    &.tag .punctuation
+        color: inherit
+
+    &.entity,
+    &.number,
+    &.symbol
+        color: $purple2
+
+    &.string,
+    &.char,
+    &.url
+        color: $green2
+        
+    &.url
+        text-decoration: underline
+
+    &.attr-value
+        color: $fg4
+        .punctuation
+            color: inherit
+
+    &.regex
+        background: $green2
+
+    &.bold
+        font-weight: bold
+
+    &.italic
+        font-style: italic
+
+    &.inserted
+        background: $fg4
+
+    &.deleted
+        background: $red2

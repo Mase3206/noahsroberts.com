@@ -28,7 +28,7 @@
 		</NavDropdown>
 
 		<NavItem href="/posts">Posts</NavItem>
-		<NavItem href="/resume">Resume</NavItem>
+		<NavItem href="/resume"><span class="font-semibold">Resume</span></NavItem>
 	</NavItemContainer>
 </Navbar>
 

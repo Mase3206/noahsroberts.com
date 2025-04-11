@@ -13,7 +13,7 @@
 		children: Snippet;
 	} = $props();
 
-	let width = 75;  // em
+	const width = 75;  // em
 </script>
 
 
@@ -38,7 +38,15 @@
 {/snippet}
 
 
-<div class="bg-neutral-100 dark:bg-neutral-800 p-8 mb-8 overflow-visible show-card w-{width * 4}" style="left: {-((width) / 4) + 1.5}em">
+<!-- 0. can't use tailwind width classes here, since they don't play nice with svelte variables -->
+<!-- 1. consts work better, but width isn't set until a moment or two after page is loaded -->
+<div 
+	class="bg-neutral-100 dark:bg-neutral-800 p-8 mb-8 overflow-visible show-card" 
+	style="
+		left: {-((width) / 4) + 1.5}em; 
+		width: {width}em;
+	"
+>
 	<div>
 		<h2 class="italic mb-0 mt-0">{title}.</h2>
 		<p class="mt-0 mb-2">by {author}</p>
