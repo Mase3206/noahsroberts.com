@@ -4,6 +4,10 @@ description: ''
 layout: normal_page
 ---
 
+<script>
+	import PostList from '$lib/components/PostList.svelte';
+</script>
+
 I have been using a computer since I could talk — playing TuxPaint and *Clifford the Big Red Dog* on a 17-inch iMac G4… oh I miss those days. My love for technology eventually developed into my role as the unofficial tech support for my teachers throughout all my years of school. In sixth grade, my uncle gave me a Learn to Code: Python book.
 
 Little did he know that that book would set the course for the rest of my life.
@@ -15,6 +19,17 @@ Below is a selection of the code I am most proud of, with my first public packag
 
 ## Related Updates
 
-(This feature has not been set up yet.)
+<PostList category="code" />
 
-<!-- TODO: relevant posts -->
+
+<!-- TODO: Remove this stuff below when pages actually link out to posts and categories -->
+
+<br />
+
+---
+
+> [!NOTE]
+> This stuff below is just here to make static site generation work. I'll eventually be removed.
+
+[Post 1](/posts/1)
+[Code posts](/posts/category/code)
