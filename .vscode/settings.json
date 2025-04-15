@@ -53,4 +53,8 @@
 		}
 	},
 
+	// Markdown
+	"[markdown]": {
+		"editor.tabCompletion": "off"
+	}
 }
