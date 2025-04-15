@@ -1,19 +1,6 @@
 <script lang="ts">
 	import DotSeparator from "$lib/components/DotSeparator.svelte";
 	import PostList from "$lib/components/PostList.svelte";
-
-	export let data;
-	const { posts } = data;
-
-	// let posts: { meta: any, path: string }[] = [];
-
-	// // modifies `posts` directly
-	// async function fetchPosts() {
-	// 	const response = await fetch('/api/posts');
-	// 	posts = await response.json();
-	// }
-	
-	// fetchPosts();
 </script>
 
 <h1>Welcome.</h1>
@@ -27,4 +14,4 @@
 
 <h2>Recent updates</h2>
 
-<PostList {posts} />
+<PostList />
