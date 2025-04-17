@@ -7,6 +7,7 @@
 
 @theme {
 	--font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	--default-mono-font-family: "Cousine Nerd Font", Cousine, Consolas, Monaco, "Andale Mono", monospace;
 }
 
 @layer base {

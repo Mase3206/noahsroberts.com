@@ -9,6 +9,7 @@
  * @convertor Noah Roberts (https://noahsroberts.com)
  * @version 1.0
  */
+@use "sass:meta"
 
 
 @media (prefers-color-scheme: dark)
@@ -28,7 +29,7 @@
     code[class*="language-"], 
     pre[class*="language-"]
         color: $fg1
-        font-family: 'Cousine Nerd Font', Cousine, Consolas, Monaco, "Andale Mono", monospace
+        font-family: var(--default-mono-font-family)
         direction: ltr
         text-align: left
         white-space: pre
