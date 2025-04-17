@@ -26,3 +26,6 @@ vite.config.ts.timestamp-*
 # *.css
 # *.css.map
 # *.min.css
+
+## specific compiled stylesheets
+prism.css

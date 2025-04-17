@@ -1,11 +1,7 @@
 import { mdsvex } from 'mdsvex';
 // import adapter from '@sveltejs/adapter-static';
 import adapter from '@sveltejs/adapter-cloudflare';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-// import remarkGithubAlerts from 'remark-github-alerts';
-// import remarkParse from 'remark-parse';
-// import remarkFrontmatter from 'remark-frontmatter';
-// import remarkDirective from 'remark-directive';
+// import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import rehypeCallouts from 'rehype-callouts';
 
 const config = {

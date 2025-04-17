@@ -2,7 +2,7 @@
 @import url('/fonts/Cousine/cousine.css');
 
 @import "tailwindcss";
-@import "./gruvbox-dark.css";
+@import "./prism.css";
 @import 'rehype-callouts/theme/github';
 
 @theme {
