@@ -13,7 +13,7 @@
 	<ul>
 		{#each posts as post}
 			<li>
-				<h2><a href="{post.path}">{post.meta.title}</a></h2>
+				<h3><a href="{post.path}">{post.meta.title}</a></h3>
 				Published: {formatDate(post.meta.date)}
 			</li>
 		{/each}
