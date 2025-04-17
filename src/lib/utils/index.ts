@@ -7,7 +7,7 @@ export async function fetchMarkdownPosts() {
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	// since each file is a Promise, we gotta wrap it in one
-	const allPosts = await Promise.all(
+	const allPosts: Post[] = await Promise.all(
 		iterablePostFiles.map(async ([path, resolver]) => {
 			const { metadata } = await resolver() as { metadata: any };
 			// strip the parent path and the extension
@@ -21,4 +21,14 @@ export async function fetchMarkdownPosts() {
 	)
 
 	return allPosts;
+}
+
+
+export type Post = {
+	meta: {
+		title: string,
+		date: string,
+		categories: string[],
+	},
+	path: string,
 }
