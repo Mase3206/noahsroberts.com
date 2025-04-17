@@ -1,4 +1,6 @@
 <script>
+	import { formatDate } from '$lib/utils/format.js';
+
 	// mdsvex doesn't really work with v5, runes, and $props.
 	export let data;
 	const { title, date, categories, Content } = data;
@@ -14,20 +16,20 @@
 
 <article>
 	<h1>{title}</h1>
-	<p>Published: {date}</p>
 	<Content />
 </article>
 
 
-<aside>
+<div>
+	<hr class="mt-24" />
+	<p>Published: {formatDate(date)}</p>
 	{#if categories}
-		<h2>Posted in:</h2>
-		<ul>
+		<p>Posted in:
 			{#each categories as category}
-				<li><a href="/posts/category/{category}">{category}</a></li>
+				<a href="/posts/category/{category}">{category}</a>&nbsp;&nbsp;
 			{/each}
-		</ul>
+		</p>
 	{:else}
-		<h2>Not posted in any categories.</h2>
+		<p>Not posted in any categories.</p>
 	{/if}
-</aside>
+	</div>

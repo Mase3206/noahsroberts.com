@@ -1,12 +1,16 @@
 /**
- * Gruvbox light theme
+ * Gruvbox light theme, converted to Sass for ease of use.
  *
  * Based on Gruvbox: https://github.com/morhetz/gruvbox
- * Adapted from PrismJS gruvbox-dark theme: https://github.com/schnerring/prism-themes/blob/master/themes/prism-gruvbox-dark.css
+ * Adapted from PrismJS gruvbox-dark theme: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-gruvbox-dark.css
+ * Converted to Sass from PrismJS gruvbox-light theme: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-gruvbox-light.css
  *
  * @author Michael Schnerring (https://schnerring.net)
+ * @convertor Noah Roberts (https://noahsroberts.com)
  * @version 1.0
  */
+
+@use "sass:meta"
 
 // Colors
 $fg1: #3c3836 // fg1 / fg
@@ -24,7 +28,8 @@ $green2: #797403 // green2
 code[class*="language-"],
 pre[class*="language-"]
     color: $fg1
-    font-family: 'Cousine Nerd Font', Cousine, Consolas, Monaco, "Andale Mono", monospace
+    // font-family: 'Cousine Nerd Font', Cousine, Consolas, Monaco, "Andale Mono", monospace
+    font-family: var(--default-mono-font-family)
     direction: ltr
     text-align: left
     white-space: pre

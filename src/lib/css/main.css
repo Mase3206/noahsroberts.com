@@ -2,11 +2,12 @@
 @import url('/fonts/Cousine/cousine.css');
 
 @import "tailwindcss";
-@import "./gruvbox-dark.css";
+@import "./prism.css";
 @import 'rehype-callouts/theme/github';
 
 @theme {
 	--font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	--default-mono-font-family: "Cousine Nerd Font", Cousine, Consolas, Monaco, "Andale Mono", monospace;
 }
 
 @layer base {
@@ -56,6 +57,21 @@
 
 	hr {
 		margin: 1em 0em;
+	}
+
+
+	table {
+		width: 100%;
+		&, * {
+			border: 0.25px solid;
+			padding: 0.25em 0.5em;
+		}
+		thead {
+			border-bottom: 2px solid;
+			* {
+				font-weight: bold;
+			}
+		}
 	}
 
 

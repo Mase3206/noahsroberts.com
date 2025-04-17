@@ -1,13 +1,8 @@
+import type { Post } from ".";
+
 export async function getAllPosts(category: string) {
 	const response = await fetch(`/api/posts`);
-	const allPosts: { 
-		meta: {
-			title: string,
-			date: string,
-			categories: string[],
-		},
-		path: string,
-	}[] = await response.json();
+	const allPosts: Post[] = await response.json();
 
 	const filteredPosts = allPosts.filter((post) => {
 		// no categories in the post
@@ -23,16 +18,9 @@ export async function getAllPosts(category: string) {
 	});
 
 
-	return new Promise<{ 
-		meta: {
-			title: string,
-			date: string,
-			categories: string[],
-		},
-		path: string,
-	}[]>((fulfil, reject) => {
+	return new Promise<Post[]>((fulfil, reject) => {
 		if (filteredPosts == null || filteredPosts.length <= 0) {
-			if (category == '') {
+			if (category != '') {
 				reject(`No posts found under the "${category}" category.`)
 			} else {
 				reject("No posts found.")

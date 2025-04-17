@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getAllPosts } from "$lib/utils/fetchPosts";
+	import { formatDate } from "$lib/utils/format";
 	let { category = '' } = $props();
 
 	let promisePosts = getAllPosts(category);
@@ -12,8 +13,8 @@
 	<ul>
 		{#each posts as post}
 			<li>
-				<h2><a href="{post.path}">{post.meta.title}</a></h2>
-				Published {post.meta.date}
+				<h3><a href="{post.path}">{post.meta.title}</a></h3>
+				Published: {formatDate(post.meta.date)}
 			</li>
 		{/each}
 	</ul>
